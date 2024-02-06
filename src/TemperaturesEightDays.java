@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TemperaturesEightDays {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("files/weather.txt");
+        File file = new File("weather.txt");
         Scanner input = new Scanner(file);
 
         double prev = input.nextDouble();
@@ -14,8 +14,7 @@ public class TemperaturesEightDays {
             double change = current - prev;
             System.out.println(prev + " to " + current +
                                ", change = " + change);
-
-            // BUG, will fix next week
+            prev = current;
         }
     }
 }
