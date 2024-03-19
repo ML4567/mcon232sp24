@@ -18,9 +18,18 @@ public class Point {
         numPointsCreated++;
     }
 
+    public Point(Point original) {
+        x = original.x;
+        y = original.y;
+    }
+
     public Point() {
         x = 0;
         y = 0;
+    }
+
+    public Point clone() {
+        return new Point(x, y);
     }
 
     // an instance method is called on an instance (object), as in p1.toString().

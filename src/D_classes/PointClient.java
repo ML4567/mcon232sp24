@@ -35,5 +35,23 @@ public class PointClient {
 
         p1.setX(10);
         p1.setY(20);
+
+        copyConstructorDemo();
+    }
+
+    private static void copyConstructorDemo() {
+        Point p1 = new Point(1, 2);
+        Point p2 = p1; // making a reference copy; p1 and p2 both refer to the same object
+        p1.setX(10);
+        System.out.println(p2.getX()); // 10
+
+        // we often want an object copy, meaning a completely new object.
+        Point p3 = new Point(1, 2);
+        // Point p4 = new Point(p3.getX(), p3.getY()); // works, but not so convenient
+        Point p4 = new Point(p3);
+        p3.setX(10);
+        System.out.println(p4.getX()); // 1
+
+        Point p5 = p3.clone();
     }
 }
