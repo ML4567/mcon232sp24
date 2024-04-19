@@ -1,4 +1,4 @@
-package E_inheritance;
+package E_inheritance_1;
 
 public class EmployeesDemo {
     public static void main(String[] args) {

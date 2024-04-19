@@ -1,4 +1,4 @@
-package E_inheritance;
+package E_inheritance_1;
 
 public class Secretary extends Employee {
     public void takeDictation(String text) {
