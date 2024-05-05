@@ -3,14 +3,14 @@ package hw5;
 public class BankAccount {
     private final int accountNumber;
     private final AccountHolder accountHolder;
-    private MonetaryValue balance;
+    private MonetaryValue balance = MonetaryValue.ZERO;
 
     private static int nextAccountNumber = 0;
 
     public BankAccount(int accountNumber, AccountHolder accountHolder, MonetaryValue balance) {
         this.accountNumber = accountNumber;
         this.accountHolder = new AccountHolder(accountHolder);
-        this.balance = balance;
+        deposit(balance);
     }
 
     public BankAccount(AccountHolder accountHolder) {

@@ -31,6 +31,14 @@ public class TimeSpan {
             throw new IllegalArgumentException("negative minutes");
         }
 
+        if (minutes == 0) {
+            return ZERO;
+        } else if (minutes == 1) {
+            return ONE_MINUTE;
+        } else if (minutes == 60) {
+            return ONE_HOUR;
+        }
+
         return new TimeSpan(minutes);
     }
 
@@ -70,6 +78,14 @@ public class TimeSpan {
 
     public boolean isGreaterThan(TimeSpan other) {
         return totalMinutes > other.totalMinutes;
+    }
+
+    public static void main(String[] args) {
+        TimeSpan[] timeSpans = new TimeSpan[1000];
+
+        for (int i = 0; i < timeSpans.length; i++) {
+            timeSpans[i] = TimeSpan.ofMinutes(1);
+        }
     }
 }
 
